@@ -128,7 +128,7 @@ function Footer() {
           <a href="http://t.me/CalApes" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-telegram" id="my-icon" style={{ color: "#ff0000" }}></i>
           </a>
-          <a href="https://www.reddit.com/user/CalApes/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.reddit.com/u/CalApesOrg/s/wlUiis76Dt" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-reddit" id="my-icon" style={{ color: "#ff0000" }}></i>
           </a>
         </div>

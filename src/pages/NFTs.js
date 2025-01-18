@@ -18,7 +18,7 @@ function NFTs() {
   useEffect(() => {
     const fetchAuctionData = async () => {
       try {
-        const response = await fetch("https://api.sheety.co/fd10818c1eae04caf0980564586d4c52/nftAuction/sheet1");
+        const response = await fetch("https://api.sheety.co/0b164f788b2e5dd686d482aebc9eaa2a/nftAuction/sheet1");
         const data = await response.json();
         setAuctionData(data.sheet1); // Assuming 'sheet1' contains the auction data
       } catch (error) {
@@ -42,7 +42,7 @@ function NFTs() {
 
     try {
       // Send data to Sheety API
-      const response = await fetch("https://api.sheety.co/fd10818c1eae04caf0980564586d4c52/nftAuction/sheet1", {
+      const response = await fetch("https://api.sheety.co/0b164f788b2e5dd686d482aebc9eaa2a/nftAuction/sheet1", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

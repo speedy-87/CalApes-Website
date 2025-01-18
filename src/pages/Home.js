@@ -59,7 +59,7 @@ function Home() {
               </p>
               <a
                   className="btn"
-                  href="https://solscan.io/token/9RGMt6ZWrtybcYt3mup6QBwyz9KtQ4tbx9naNSByPvfx"
+                  href="https://raydium.io/swap/?inputMint=sol&outputMint=9RGMt6ZWrtybcYt3mup6QBwyz9KtQ4tbx9naNSByPvfx"
                   target="_blank"
                   rel="noopener noreferrer"
               >

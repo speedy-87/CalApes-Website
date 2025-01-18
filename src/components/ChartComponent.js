@@ -5,7 +5,7 @@ import './tokeninfo.css';
 const ChartComponent = ({ walletAddress }) => {
   return (
     <div className="chart-container">
-      {/* Conditionally render message above the chart 
+      {/* Conditionally render message above the chart */}
       {!walletAddress && (
         <div className="connect-wallet-message">
           
@@ -15,11 +15,11 @@ const ChartComponent = ({ walletAddress }) => {
       <div id="dexscreener-embed">
         <iframe
           id="calapes-chart"
-          src="https://dexscreener.com/solana/HkEMYrJXrQ2VyFFCzFYgkNqHogDkKrAf8Rxn289HKPQ9?embed=1&loadChartSettings=0&info=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=1&chartType=marketCap&interval=15"
+          src="https://dexscreener.com/solana/Bts488tJufKD3e55vPLiZFLAFJ5CP6548VWwoECUsHdM?embed=1&loadChartSettings=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
           title="CalApes Chart"
           allowFullScreen
         ></iframe>
-      </div>*/}
+      </div>
 
       <div className="calTokenomics">
           <h3>Tokenomics</h3>

@@ -41,6 +41,7 @@ function Navbar({ walletAddress, connectWallet, disconnectWallet }) {
       <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
         <li><Link to="/home" className="nav-link" onClick={closeMenu}>Home</Link></li>
         <li><Link to="/tokenomics" className="nav-link" onClick={closeMenu}>Tokenomics</Link></li>
+        <li><Link to="/roadmap" className="nav-link" onClick={closeMenu}>Roadmap</Link></li>
         <li><Link to="/transactions" className="nav-link" onClick={closeMenu}>Transactions</Link></li>
         <li><Link to="/merch" className="nav-link" onClick={closeMenu}>Merch</Link></li>
         <li><Link to="/gallery" className="nav-link" onClick={closeMenu}>Gallery</Link></li>

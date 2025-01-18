@@ -14,7 +14,7 @@ function Presale() {
         </p>
         <p className="calTagline"></p>
         <a href="https://www.pinksale.finance/solana/launchpad/2F1WZUHWkeKhJgMsCRKsVTwBN79qzZnb5kzPk3FmXHLu" className="enterCAL" target="_blank" rel="noopener noreferrer">
-            BUY PRESALE
+            Claim Tokens
           </a>
       </div>
     </div>

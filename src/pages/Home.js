@@ -11,6 +11,20 @@ function Home() {
     <div className="calHome">
       <div className="cal-apesHome">
         <p className="intro-text">
+        <div className="social-links">
+                <a href="https://www.tiktok.com/@calapesorg?_t=ZT-8tAlnpC3KFn&_r=1" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-tiktok" id="my-icon" style={{ color: "#ff0000" }}></i>
+                </a>
+                <a href="https://x.com/calapesltd?s=21&t=dwDaKPMPWPFPDwCfPIuNsA" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-x-twitter" id="my-icon" style={{ color: "#ff0000" }}></i>
+                </a>
+                <a href="https://t.me/CalApes" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-telegram" id="my-icon" style={{ color: "#ff0000" }}></i>
+                </a>
+                <a href="https://www.reddit.com/user/CalApesOrg/?share_id=FsQdAogMvTukGtUDjonLs&utm_content=1&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1/" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-reddit" id="my-icon" style={{ color: "#ff0000" }}></i>
+                </a>
+              </div>
         <h2>Mission</h2>
           Saving California from Wildfires <br /> <br />
 
@@ -18,9 +32,9 @@ function Home() {
           At $CALAPES, we believe in turning chaos into change. Our community-driven token is not just about having fun 
           with memes—it's about making a difference. <br /> <br />
 
-          All marketing funds raised through $CALAPES will be directly donated to California wildfire relief efforts. 
-          By investing in $CALAPES, you're not just joining a fun, growing community of apes; you're helping to fund real-life firefighters 
-          and aid in the recovery of fire-stricken areas in California.
+          All Donation funds raised through $CALAPES will be directly donated to California wildfire relief efforts. 
+          By investing in $CALAPES, a growing community of apes; you're helping to fund the ones in need and aid in 
+          the recovery of fire-stricken areas in California.
         </p>
 
         <div className="calVideoWrapper">
@@ -70,22 +84,7 @@ function Home() {
               Get involved today and help the $CALAPES protect California. Buy, hold, and support the cause with 
               $CALAPES—the meme token that’s about more than just laughs. 
               Together, we can make a real difference and create a brighter future for all!
-              </p>
-              <div className="social-links">
-                <a href="https://www.tiktok.com/@calapesorg?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-tiktok" id="my-icon" style={{ color: "#ff0000" }}></i>
-                </a>
-                <a href="https://x.com/CalApesOrg" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-x-twitter" id="my-icon" style={{ color: "#ff0000" }}></i>
-                </a>
-                <a href="http://t.me/CalApes" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-telegram" id="my-icon" style={{ color: "#ff0000" }}></i>
-                </a>
-                <a href="https://www.reddit.com/u/CalApesOrg/s/wlUiis76Dt" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-reddit" id="my-icon" style={{ color: "#ff0000" }}></i>
-                </a>
-              </div>
-              
+              </p>          
           </div>
         </div>
 

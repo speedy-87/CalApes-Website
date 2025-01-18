@@ -10,6 +10,7 @@ import Gallery from "./pages/Gallery";
 import NFTs from "./pages/NFTs";
 import Transactions from "./components/transactions";
 import About from "./pages/About";
+import Roadmap from "./pages/Roadmap"
 
 import Loader from "./components/Loader";  
 import "./App.css";
@@ -87,6 +88,7 @@ function App() {
 
               {/* Other routes */}
               <Route path="/home" element={<Home />} />
+              <Route path="/roadmap" element={<Roadmap />} />
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/merch" element={<Merch />} />
               <Route path="/gallery" element={<Gallery />} />

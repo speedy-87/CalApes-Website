@@ -119,16 +119,16 @@ function Footer() {
         )}
 
         <div className="social-links">
-          <a href="https://www.tiktok.com/@calapesorg?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.tiktok.com/@calapesorg?_t=ZT-8tAlnpC3KFn&_r=1" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-tiktok" id="my-icon" style={{ color: "#ff0000" }}></i>
           </a>
-          <a href="https://x.com/CalApesOrg" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/calapesltd?s=21&t=dwDaKPMPWPFPDwCfPIuNsA" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-x-twitter" id="my-icon" style={{ color: "#ff0000" }}></i>
           </a>
-          <a href="http://t.me/CalApes" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/CalApes" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-telegram" id="my-icon" style={{ color: "#ff0000" }}></i>
           </a>
-          <a href="https://www.reddit.com/u/CalApesOrg/s/wlUiis76Dt" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.reddit.com/user/CalApesOrg/?share_id=FsQdAogMvTukGtUDjonLs&utm_content=1&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1/" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-reddit" id="my-icon" style={{ color: "#ff0000" }}></i>
           </a>
         </div>

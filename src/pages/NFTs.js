@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import apesmoke from "../images/apeWsmoke.jpeg";
 import apefire from "../images/apeWfire.png";
 import apeaxe from "../images/apeWaxe.png";
+import nft4 from "../images/NFT4.jpeg";
+import nft5 from "../images/NFT5.png";
+import nft6 from "../images/NFT6.png";
 import './NFTs.css';
 
 function NFTs() {
@@ -63,7 +66,7 @@ function NFTs() {
   return (
     <div id="calNFT">
       <div className="calapesNFT">
-        <h2>$CALAPES NFTs Coming Soon!</h2>
+        <h2>$CALAPES NFTs</h2>
         <div className="nft-images">
           <img
             className="CalApeImg"
@@ -83,6 +86,24 @@ function NFTs() {
             alt="CalApe"
             onClick={() => setSelectedNFT("NFT 3")}
           />
+          <img
+            className="CalApeImg"
+            src={nft4}
+            alt="CalApe"
+            onClick={() => setSelectedNFT("NFT 4")}
+          />
+          <img
+            className="CalApeImg"
+            src={nft5}
+            alt="CalApe"
+            onClick={() => setSelectedNFT("NFT 5")}
+          />
+          <img
+            className="CalApeImg"
+            src={nft6}
+            alt="CalApe"
+            onClick={() => setSelectedNFT("NFT 6")}
+          />
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -95,9 +116,12 @@ function NFTs() {
               required
             >
               <option value="">Choose an NFT</option>
-              <option value="NFT 1">NFT 1</option>
-              <option value="NFT 2">NFT 2</option>
-              <option value="NFT 3">NFT 3</option>
+              <option value="NFT 1">1</option>
+              <option value="NFT 2">2</option>
+              <option value="NFT 3">3</option>
+              <option value="NFT 4">4</option>
+              <option value="NFT 5">5</option>
+              <option value="NFT 6">6</option>
             </select>
           </label>
           <br />
@@ -106,10 +130,10 @@ function NFTs() {
             <input
               id="bid"
               type="number"
-              placeholder="5"
+              placeholder="0.5"
               value={bidAmount}
               onChange={(e) => setBidAmount(e.target.value)}
-              min="5"  // Setting the minimum to 0.001 SOL
+              min="0.5"  // Setting the minimum to 0.5 SOL
               step="0.001" // Allow increments of 0.001 SOL
               required
             />
@@ -126,9 +150,10 @@ function NFTs() {
           </label>
           <br />
           <button type="submit">Place Bid</button>
+
+          {message && <p>{message}</p>}
         </form>
 
-        {message && <p>{message}</p>}
 
         {/* Display auction data */}
         <div className="auction-data">

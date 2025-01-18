@@ -43,6 +43,14 @@
   max-width: 800px;
   text-align: left;
 }
+.intro-text .social-links {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
 
 /* Project Art Section */
 .calArtGallery {

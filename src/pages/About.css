@@ -1,0 +1,98 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .calAbout {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Card Styles */
+  .cal-apesAbout,
+  .cal-apesPartners {
+    max-width: 750px;
+    width: 100%;
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 2px solid #ff0000;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Text Styles */
+  h2 {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 2px 4px 8px #ff9617;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  
+  p.calTaglineAbout,
+  p.partnerTagline {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ffffff;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+  }
+  
+  p.partnerTagline {
+    font-weight: bold;
+  }
+  
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .cal-apesAbout,
+    .cal-apesPartners {
+      padding: 30px 20px;
+      max-width: 90%;
+    }
+  
+    h2 {
+      font-size: 2.2rem;
+    }
+  
+    p.calTaglineAbout,
+    p.partnerTagline {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 2rem;
+    }
+  
+    p.calTaglineAbout,
+    p.partnerTagline {
+      font-size: 0.9rem;
+    }
+  }
+  

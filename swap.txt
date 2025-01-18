@@ -1,0 +1,201 @@
+import React, { useState, useEffect } from "react";
+import { createJupiterApiClient } from "@jup-ag/api";
+import { PublicKey, Connection, Transaction, SystemProgram } from "@solana/web3.js";
+import { Buffer } from "buffer";
+
+// Polyfill the global Buffer object
+if (!window.Buffer) {
+    window.Buffer = Buffer;
+}
+
+
+const SwapWidget = () => {
+    const RUNI_MINT_ADDRESS = "CKtL4AiaPwhoWPMvwy6bKYUmXskWM5Pjs4E7aW5upump"; // Replace with your token mint address
+    const SOL_MINT_ADDRESS = "So11111111111111111111111111111111111111112"; // SOL mint address
+    const RUNI_DECIMALS = 6; // Adjust based on the decimal precision of RUNI token (e.g., 6 decimals)
+
+    const [walletAddress, setWalletAddress] = useState(null);
+    const [amount, setAmount] = useState("");
+    const [swapDirection, setSwapDirection] = useState("SOL_TO_RUNI");
+    const [routes, setRoutes] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(""); // For error messages
+
+    const connection = new Connection("https://muddy-necessary-sheet.solana-mainnet.quiknode.pro/2ad73309e083f6598405fc541b1b0c5e94b5e513");
+    const jupiterApi = createJupiterApiClient({ baseURL: "https://quote-api.jup.ag/v3" });
+
+    const connectWallet = async () => {
+        const { solana } = window;
+        if (solana && solana.isPhantom) {
+            try {
+                const response = await solana.connect();
+                setWalletAddress(response.publicKey.toString());
+            } catch (err) {
+                console.error("Wallet connection failed:", err);
+            }
+        } else {
+            alert("Phantom Wallet not found! Please install it.");
+        }
+    };
+
+    const fetchBalance = async (account) => {
+        try {
+            if (!account || account.trim() === "") {
+                throw new Error("Invalid account address.");
+            }
+            const balanceResponse = await connection.getTokenAccountBalance(
+                new PublicKey(account),
+                "finalized"
+            );
+            return balanceResponse.value.amount;
+        } catch (error) {
+            console.error("Failed to fetch balances:", error);
+            return 0;
+        }
+    };
+
+    const fetchRoutes = async () => {
+        if (!amount || !walletAddress) {
+            setRoutes([]);
+            return;
+        }
+    
+        setLoading(true);
+        setErrorMessage(""); // Reset any previous errors
+    
+        const inputMint = swapDirection === "SOL_TO_RUNI" ? SOL_MINT_ADDRESS : RUNI_MINT_ADDRESS;
+        const outputMint = swapDirection === "RUNI_TO_SOL" ? SOL_MINT_ADDRESS : RUNI_MINT_ADDRESS;
+    
+        const amountInSmallestUnit = swapDirection === "SOL_TO_RUNI"
+            ? Math.floor(parseFloat(amount) * 1e9) // Convert to lamports
+            : Math.floor(parseFloat(amount) * Math.pow(10, RUNI_DECIMALS)); // Convert to RUNI's smallest unit
+    
+        try {
+            // Fetching the quote for the swap using Jupiter API
+            const response = await jupiterApi.quoteGet({
+                inputMint,
+                outputMint,
+                amount: amountInSmallestUnit.toString(),
+                slippageBps: 100,  // 1% slippage, adjust as needed
+                userPublicKey: walletAddress,
+            });
+    
+            if (response && response.routePlan && response.routePlan.length > 0) {
+                const route = response.routePlan[0];  // Assuming the first route is the best
+                console.log("Fetched Route:", route);
+                setRoutes([route]);  // Store the entire route for use in executeSwap
+            } else {
+                console.error("No valid routes found.");
+                setRoutes([]);
+            }
+        } catch (err) {
+            console.error("Failed to fetch routes:", err);
+            setRoutes([]);
+        } finally {
+            setLoading(false);
+        }
+    };    
+        
+    const executeSwap = async () => {
+        if (!Array.isArray(routes) || routes.length === 0) {
+            alert("No routes available for the swap");
+            return;
+        }
+    
+        const bestRoute = routes[0];
+        console.log("Best Route for Swap:", bestRoute);
+    
+        if (!bestRoute || !bestRoute.swapInfo) {
+            console.error("Invalid or missing route details:", bestRoute);
+            alert("Invalid route. Please fetch routes again.");
+            return;
+        }
+    
+        // Ensure wallet address is valid
+        if (!walletAddress) {
+            alert("Please connect your wallet.");
+            return;
+        }
+    
+        const swapRequest = {
+            userPublicKey: walletAddress,
+            route: bestRoute,
+        };
+    
+        console.log("Swap Request Payload:", swapRequest);  // Check if the payload is correct
+    
+        if (!swapRequest || !swapRequest.route) {
+            alert("Invalid swap request. Please try again.");
+            return;
+        }
+    
+        try {
+            console.log("Sending Swap Request:", swapRequest);  // Log the request just before calling the API
+            const swapResponse = await jupiterApi.swapPost(swapRequest);
+            alert(`Swap successful! Transaction Signature: ${swapResponse.data.txid}`);
+        } catch (err) {
+            console.error("Swap failed:", err);
+    
+            if (err.response?.data?.error === "INSUFFICIENT_SOL") {
+                alert("Swap failed: Not enough SOL for gas fees.");
+            } else if (err.response?.status === 400) {
+                alert("Bad request. Please check your input values.");
+            } else if (err.response?.status === 429) {
+                alert("Too many requests. Please wait and try again.");
+            } else if (err.message.includes("network")) {
+                alert("Network error. Please check your internet connection.");
+            } else {
+                alert("An unexpected error occurred. Please try again or check the console for details.");
+            }
+        }
+    };
+         
+
+    useEffect(() => {
+        fetchRoutes();
+    }, [amount, swapDirection, walletAddress]);
+
+    return (
+        <div className="widget">
+            <h2>Swap Rizz Unicorn</h2>
+            <button onClick={connectWallet} className="connect-btn">
+                {walletAddress ? `Connected: ${walletAddress}` : "Connect Wallet"}
+            </button>
+            {walletAddress && (
+                <div className="swap-container">
+                    <select
+                        value={swapDirection}
+                        onChange={(e) => setSwapDirection(e.target.value)}
+                    >
+                        <option value="SOL_TO_RUNI">SOL to RUNI</option>
+                        <option value="RUNI_TO_SOL">RUNI to SOL</option>
+                    </select>
+                    <input
+                        type="number"
+                        placeholder="Amount"
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                    />
+                    {loading && <p>Loading...</p>}
+                    {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+                    {!loading && routes.length > 0 ? (
+                        <div>
+                            <p>
+                                You get: {routes[0]?.swapInfo?.outAmount ? 
+                                    `${parseFloat(routes[0].swapInfo.outAmount) / (swapDirection === "SOL_TO_RUNI" ? Math.pow(10, RUNI_DECIMALS) : 1e9)} ${swapDirection === "SOL_TO_RUNI" ? "RUNI" : "SOL"}` 
+                                    : "Unable to calculate. Check route details."}
+                            </p>
+                            <button onClick={executeSwap} className="swap-btn">
+                                Execute Swap
+                            </button>
+                        </div>
+                    ) : (
+                        !loading && <p>Input a valid amount!</p>
+                    )}
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default SwapWidget;

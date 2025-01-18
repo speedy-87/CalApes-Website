@@ -1,0 +1,455 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url(./images/ape-bg.webp);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  background-attachment: fixed; 
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.calapes {
+  height: 80vh; 
+  display: flex; 
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; 
+  align-items: center;
+  text-align: center; 
+  border-radius: 10px; 
+  padding: 20px;
+}
+
+.calapes h2 {
+  font-size: 4rem;
+  color: #000000;
+  margin-bottom: 20px; /* Add space between header and button */
+}
+
+
+  /* RESPONSIVE CSS */ 
+  @media (max-width: 768px) {
+    .calapes {
+      padding: 30px 20px;
+    }
+  
+    .calapes h2 {
+      font-size: 3rem;
+    }
+  }
+#calapes-chart {
+  background-color: #ff9617;
+  padding: 1px;
+  border: 2px solid #ff9617;
+  border-radius: 8px;
+  flex-grow: 1;
+  height: 550px;
+  min-width: 800px;
+  width: 100%;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1f1f1f69;
+  width: auto;
+  border-bottom: 2px solid #444;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+  text-shadow: 0 0 10px #ff0000; 
+}
+
+
+@media (max-width: 768px) {
+  
+
+  header {
+    width: auto;
+    align-items: flex-start;
+    text-align: left;
+    top: -10px;
+  }
+
+  .container {
+    margin-right: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .widget {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  #calapes-chart {
+    width: 100%;
+    height: 250px;
+  }
+
+}
+
+
+
+/* Container for widgets, and charts */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 20px;
+  flex-wrap: wrap;
+  width: auto;
+  min-height: 80vh;
+  transition: all 0.3s ease;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  width: 100%;             
+}
+
+.widget {
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  width: 48%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.widget:hover {
+  background-color: #444;
+}
+
+
+/* Widget headers */
+.widget h2 {
+  font-size: 1.8rem;
+  color: #ff9617;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+button.connect-btn {
+  padding: 12px 24px;
+  background-color: #ff9617;
+  border: none;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  margin: 10px auto;
+}
+
+button.connect-btn:hover {
+  background-color: #f665cf;
+}
+
+/* Input fields */
+input[type="number"], select {
+  padding: 10px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #2C2C2C;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 350px;
+}
+
+input[type="number"]:focus, select:focus {
+  outline: none;
+  border-color: #ff9617;
+}
+
+/* Text */
+p {
+  color: #B0B0B0;
+  font-size: 1rem;
+}
+
+.error-message {
+  color: #f93e30;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Styling for the "Connect wallet to trade" message */
+.connect-wallet-message {
+  text-align: center;
+  color: #ff0000;
+  text-shadow: 0 0 8px #ff0000;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.Landing {
+  text-decoration: none;
+}
+/* Media queries for responsiveness */
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .container {
+    margin-right: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    gap: 0px;
+  }
+
+  .widget {
+    width: 48%;
+  }
+
+  #calapes-chart {
+    width: 70%;
+  }
+}
+
+/* Tablets and medium screens */
+@media (max-width: 1024px) {
+  .container {
+    margin: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    gap: 0px;
+  }
+
+  .widget {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  #calapes-chart {
+    min-width: 200px;
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width: 768px;
+      margin: auto;
+  }
+}
+
+/* Terminal container with glow */
+.swap-widget__terminal-container {
+  margin: 20px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #ff9617; /* Neon border */
+  padding: 1px; /* Added padding to ensure border is visible */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.swap-widget__title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+
+/* Connect button */
+.swap-widget__connect-btn {
+  width: 100%;
+  padding: 6px;
+  background-color: #ff9617;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.swap-widget__connect-btn:hover {
+  background-color: #e67f00;
+}
+
+/* Terminal window */
+.swap-widget__terminal {
+  width: 100%;
+  max-width: 400px;
+  margin: 5px;
+  height: 450px;
+  max-height: 450px;
+  overflow: auto;
+  background-color: #a834dd00;
+  border-radius: 10px;
+}
+
+/* Jupiter terminal instance */
+#jupiter-terminal-instance {
+  height: 450px;
+  width: 380px;
+  max-width: 400px;
+  margin: auto;
+  background-color: #a834dd00;
+}
+
+#jupiter-terminal-instance .overflow-auto {
+  overflow-x: hidden !important;
+}
+
+/* Transitions for smooth height changes */
+.swap-widget__terminal {
+  transition: height 0.3s ease-in-out;
+  background-color: #a834dd00;
+}
+
+/* Hide the Jupiter link */
+.hide-jupiter-link {
+  display: none;
+}
+
+#jupiter-terminal a[href^="https://jup.ag/swap/"] {
+  display: none;
+}
+
+#jupiter-terminal-instance .\!cursor-help {
+  display: none;
+}
+/* Hide the Jupiter logo's container */
+div.h-16.w-16.animate-hue.duration-100 {
+  display: none;
+}
+/* Targeting the div based on its class and changing the background */
+.invisible {
+  background-color: black !important;
+}
+.mt-4.space-y-4.border.border-white\/5.rounded-xl.p-3 * {
+  color: #ff9617 !important;
+  border-color: #ff9617 !important;
+}
+#jupiter-terminal-instance .border-white\/5 {
+  border-color: #ff9617;
+}
+.ml-2 svg path {
+  fill: #ff9617 !important;
+}
+#jupiter-terminal-instance .border-white\/5 {
+  border-color: hsl(0, 0%, 0%) !important;
+  background-color: #0000008d !important;
+}
+#jupiter-terminal-instance .text-white\/50 {
+  color: #ffffff !important;
+}
+#jupiter-terminal-instance .text-white\/30 {
+  color: #ff9617 !important;
+}
+span.text-white\/30 {
+  visibility: hidden;
+  width: 0;
+}
+.bg-black\/20.rounded-xl.px-2.py-1.text-white\/50.flex.items-center.space-x-1 svg path {
+  fill: #ff9617 !important; /* For SVG fill */
+}
+#jupiter-terminal-instance .bg-black\/20 {
+  background-color: rgba(0, 0, 0, 0.751) !important;
+}
+#jupiter-terminal-instance .bg-black\/10 {
+  background-color: rgb(0, 0, 0, 0.751) !important;
+}
+.border.border-black\/50.fill-current.text-black.bg-black\/10.dark\:text-white-35.dark\:hover\:text-white\/50.dark\:border.dark\:border-white-35.dark\:hover\:border-white\/50.h-8.w-8.rounded-full.flex.items-center.justify-center.cursor-pointer.transition-all .block svg path {
+  fill: #ff9617 !important; /* Change SVG fill to pink */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  /* Adjust terminal container width */
+  .swap-widget__terminal-container {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* Adjust terminal window */
+  .swap-widget__terminal {
+    max-width: 100%;
+    height: 450px; /* Adjust height for better fit on smaller screens */
+  }
+
+  #jupiter-terminal-instance {
+    max-width: 100%;
+    height: 450px;
+  }
+  #jupiter-terminal-instance .overflow-auto {
+    overflow-x: hidden;
+  }
+
+  /* Adjust connect button padding */
+  .swap-widget__connect-btn {
+    padding: 10px;
+  }
+
+  /* Adjust title font size */
+  .swap-widget__title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Further reduce terminal container width for smaller devices */
+  .swap-widget__terminal-container {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  /* Further reduce height for small screens */
+  .swap-widget__terminal {
+    height: 450px; /* Smaller height */
+  }
+
+  #jupiter-terminal-instance {
+    height: 450px;
+  }
+  #jupiter-terminal-instance .overflow-auto {
+    overflow-x: hidden;
+  }
+
+  
+  .flex.items-center.justify-between.text-xs {
+    flex-direction: column;
+  }
+
+  /* Adjust button padding for small screens */
+  .swap-widget__connect-btn {
+    padding: 12px;
+  }
+
+  /* Adjust title font size */
+  .swap-widget__title {
+    font-size: 1rem;
+  }
+}

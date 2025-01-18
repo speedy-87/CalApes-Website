@@ -1,0 +1,250 @@
+.calapesNFT {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #000;
+  text-shadow: 0 0 10px #ff9617;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.nft-images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.CalApeImg {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.CalApeImg:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0e0e0eb8;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+form h3 {
+  color: #ff9617;
+  margin-bottom: 10px;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ff9617;
+}
+
+form input,
+form select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 2px solid #ff9617;
+  width: 100%;
+  max-width: 200px;
+  font-size: 1rem;
+  background-color: #ffffffb8;
+  color: #000;
+  transition: border-color 0.3s ease;
+}
+
+form select {
+  width: 100%;
+  max-width: 100px !important;
+}
+
+#bid[type="number"] {
+  padding: 10px;
+  border: 2px solid #ff9617;
+  border-radius: 8px;
+  background-color: #ffffffb8;
+  color: #000;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 200px;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #ff9617;
+}
+
+form button {
+  padding: 12px 24px;
+  background-color: #ff9617;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  background-color: #de8111;
+  transform: translateY(-2px);
+}
+
+form button:active {
+  transform: translateY(1px);
+}
+
+p {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+  font-size: 1.2rem;
+}
+
+/* Auction Data Section */
+.auction-data {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  background-color: #0e0e0eb8;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.auction-data h3 {
+  color: #ff9617;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.auction-data ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.auction-data li {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1rem;
+  border-bottom: 1px solid #ff9617;
+  padding-bottom: 10px;
+}
+
+.auction-data strong {
+  color: #ff9617;
+}
+
+
+
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .calapesNFT {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .nft-images {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .CalApeImg {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  form input,
+  form select,
+  #bid[type="number"] {
+    font-size: 0.9rem;
+  }
+
+  form button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .auction-data {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .auction-data h3 {
+    font-size: 1.5rem;
+  }
+
+  .auction-data li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .nft-images {
+    gap: 10px;
+  }
+
+  .CalApeImg {
+    max-width: 120px;
+  }
+
+  form input,
+  form select,
+  #bid[type="number"] {
+    font-size: 0.8rem;
+  }
+
+  form button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .auction-data h3 {
+    font-size: 1.2rem;
+  }
+
+  .auction-data li {
+    font-size: 0.8rem;
+  }
+}

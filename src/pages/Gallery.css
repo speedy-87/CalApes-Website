@@ -1,0 +1,142 @@
+/* General Styles */
+#gallery {
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px !important;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.gallery-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1); /* Enlarge slightly on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Add padding for better spacing on small screens */
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%; /* Limit modal width to 90% of the viewport */
+  max-height: 90%; /* Limit modal height to 90% of the viewport */
+  overflow: hidden; /* Prevent image from overflowing */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the image in the modal */
+}
+
+.modal-content img {
+  width: 100%; /* Scale image width to fit the modal */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 90vh; /* Ensure image doesn't exceed modal height */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1; /* Ensures the button stays circular */
+  padding: 0; /* Ensure no additional padding is added */
+}
+
+.close-button:hover {
+  background: #ff9617;
+  color: #000000;
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets and below) */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust gallery grid layout */
+  }
+
+  .gallery-item img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .modal-content {
+    max-width: 95%; /* Adjust modal content size */
+    max-height: 95%; /* Adjust modal content height */
+  }
+
+  .modal-content img {
+    max-height: 80vh; /* Adjust image max height */
+  }
+}
+
+/* Small Screens (Mobile devices) */
+@media (max-width: 768px) {
+  #gallery {
+    padding: 15px; /* Reduce padding on mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Reduce heading size */
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid layout for smaller screens */
+  }
+
+  .gallery-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .modal-content {
+    max-width: 80%; /* Ensure modal fits on smaller screens */
+    max-height: 90vh; /* Limit modal height */
+  }
+
+  .modal-content img {
+    max-height: 70vh; /* Limit image height */
+  }
+}

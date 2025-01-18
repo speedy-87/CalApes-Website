@@ -1,0 +1,234 @@
+/* Navbar Styles */
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  /* Hamburger Menu */
+  .navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1000;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hamburger Bars */
+  .navbar .hamburger .bar {
+    width: 25px;
+    height: 4px;
+    background-color: #ff0000;
+    border-radius: 10px;
+    transition: all 0.3s ease, stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #000;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+    fill: none;
+  }
+  
+  .navbar .hamburger.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .navbar .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .navbar .hamburger.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+  
+  .navbar .hamburger.open {
+    transform: rotate(90deg);
+  }
+  
+  /* Stroke Animation */
+  .navbar .hamburger .bar:nth-child(1) {
+    stroke-dasharray: 40 160;
+  }
+  
+  .navbar .hamburger .bar:nth-child(2) {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+  }
+  
+  .navbar .hamburger .bar:nth-child(3) {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+  }
+  
+  .navbar .hamburger.open .bar:nth-child(3) {
+    stroke-dashoffset: -64px;
+  }
+  
+  .navbar .hamburger.open .bar:nth-child(2) {
+    transform: rotate(90deg);
+    stroke-dashoffset: -64px;
+  }
+  
+  /* Navbar Links */
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 1000;
+  }
+  
+  .nav-links .nav-link {
+    color: #E0E0E0;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links .nav-link:hover {
+    color: #ff9617;
+  }
+  
+  .nav-links .nav-link.active {
+    color: #ff0000;
+    font-weight: bold;
+  }
+  
+  /* Wallet Menu */
+  .wallet-menu {
+    position: relative;
+    z-index: 9999 !important;
+  }
+  
+  /* RUNIverse Dropdown */
+.nav-link.dropdown-parent {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-link.dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1F1F1F;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  color: #E0E0E0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.dropdown-item:hover {
+  background-color: #ff9617;
+  color: #000;
+  border-radius: 20px;
+}
+
+/* Dropdown on Mobile */
+@media (max-width: 1024px) {
+  .dropdown {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+  
+  /* Mobile Menu */
+  .nav-links.active {
+    display: block;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  @media (max-width: 1024px) {
+    .navbar {
+      justify-content: flex-start;
+      width: fit-content;
+    }
+  
+    .navbar .hamburger {
+      display: flex;
+      margin-left: auto;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      background-color: #1F1F1F;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+  
+    .nav-links.active {
+      display: flex;
+      width: 250px;
+      text-align: center;
+      text-decoration: none;
+    }
+  
+    .nav-links .nav-link {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: flex-start;
+      gap: 10px;
+      width: fit-content;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 15px;
+      width: 200px !important;
+    }
+  
+    .nav-links .nav-link {
+      font-size: 1rem;
+    }
+  
+    .navbar .hamburger {
+      margin-left: auto;
+    }
+  }
+  

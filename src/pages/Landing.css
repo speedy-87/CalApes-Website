@@ -1,0 +1,151 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif; /* A clean font for general text */
+}
+
+#banner {
+  width: 100%;
+  margin: 0px;
+  padding: 0%;
+}
+#banner img {
+  width: 50%;
+}
+
+/* Container Styles */
+.calLanding {
+  min-height: 80vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Card Styles */
+.cal-apesLanding {
+  max-width: 750px;
+  background: #0e0e0eb8;
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 2px solid #ff0000;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out;
+  backdrop-filter: blur(10px); 
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Text Styles */
+.cal-apesLanding h2 {
+  font-size: 3rem; /* Increased font size for better visibility */
+  color: #ffffff;
+  text-shadow: 2px 4px 8px #ff9617;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.calTagline {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.7;
+  margin: 20px 0;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cal-apesLanding {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+  .cal-apesLanding h2 {
+    font-size: 2.2rem;
+  }
+  .calTagline {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cal-apesLanding h2 {
+    font-size: 2rem !important;
+  }
+  .calTagline {
+    font-size: 0.8rem;
+  }
+}
+
+/* BUTTON STYLE */
+.enterCAL {
+  display: inline-block;
+  padding: 15px 40px;
+  font-family: 'Airstrike', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000;
+  background: linear-gradient(135deg, #ff9617, #ff0000);
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Ripple Effect */
+.enterCAL::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+
+.enterCAL:active::after {
+  width: 200%;
+  height: 200%;
+  opacity: 1;
+  transition: none; /* Ensure the ripple appears instantly when tapped */
+}
+
+/* Hover and Click Effects */
+.enterCAL:hover {
+  background: linear-gradient(135deg, #ff0000, #ff9617);
+  transform: scale(1.1);
+  box-shadow: 0 10px 40px #ff9617, 0 0 20px #ff0000;
+}
+
+.enterCAL:active {
+  transform: scale(1);
+}
+
+/* Responsive Styles for the Button */
+@media (max-width: 768px) {
+  .enterCAL {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enterCAL {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+}

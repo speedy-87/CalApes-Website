@@ -1,0 +1,41 @@
+
+.calTokenomics {
+    background-color: #0e0e0eb8;
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff0000;
+    color: #ff9617; /* Pink text color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto; /* Center the component */
+  }
+  
+  .calTokenomics h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Text shadow for depth */
+  }
+  
+  .calTokenomics ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .calTokenomics li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Light background for each item */
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Inset shadow for a pressed effect */
+    transition: transform 0.2s, background 0.2s;
+  }
+  
+  .calTokenomics li:hover {
+    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+    transform: translateY(-2px); /* Lift effect */
+  }
+  

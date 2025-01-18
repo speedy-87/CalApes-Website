@@ -1,0 +1,120 @@
+/* Footer styling */
+.footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-h2 {
+  font-size: 2rem !important;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between social links and button */
+  position: relative; /* Ensure popup is positioned relative to this container */
+}
+
+.social-links a {
+  margin: 0 10px;
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.copy-address-button,
+.contactUs-button {
+  background-color: #ff0000;
+  color: #000000;
+  border: 1px solid #ff0000;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.copy-address-button:hover,
+.contactUs-button:hover {
+  background-color: #ff0000;
+}
+
+#my-icon {
+  text-shadow: 2px 2px 2px #000;
+}
+
+h2 {
+  margin: 2px !important;
+}
+
+/* CONTACT CSS */
+.popup {
+  display: none; 
+  position: fixed; /* Changed to fixed for better centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0e0e0ed2;
+  color: #ffffff;
+  padding: 10px;
+  border: 2px solid #ff0000;
+  border-radius: 8px;
+  z-index: 9999 !important;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: 90%; /* Adjust for mobile */
+  max-width: 400px; /* Limit max width */
+}
+
+.popup.open {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: translate(-50%, -50%); 
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup form label {
+  display: block; /* Ensure labels stay on their own line */
+  margin-bottom: 5px;
+}
+
+.popup form input,
+.popup form textarea {
+  width: 100%; /* Ensure inputs are full width */
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffffb2;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.popup form button {
+  background-color: #ff0000;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column; /* Stack footer items vertically */
+  }
+
+  .popup {
+    width: 90%; /* Ensure popup fits on smaller screens */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

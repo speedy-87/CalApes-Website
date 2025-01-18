@@ -1,0 +1,407 @@
+/* Main Styles */
+.calHome {
+  position: relative;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Responsive Utilities */
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Main Styling */
+.cal-apesHome {
+  text-align: center;
+  overflow: hidden;
+}
+
+.cal-apesHome h2 {
+  color: #fff;
+  text-shadow: 0 0 10px #ff0000;
+  text-align: center;
+}
+
+.cal-apesHome p {
+  color: #ffffff;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  margin: 20px auto 0px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  background-color: #0e0e0eb8;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #ff0000;
+  transition: all 0.3s ease;
+  width: 90%;
+  max-width: 800px;
+  text-align: left;
+}
+
+/* Project Art Section */
+.calArtGallery {
+  margin-top: 40px;
+}
+
+.calArtGallery h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 10px #ff0000;
+  margin-bottom: 10px;
+}
+
+.artImages {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.artImages img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artImages img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Token Info Section */
+.calTokenContainer {
+  display: inline-block;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.calTokenInfo {
+  font-size: 1.2rem;
+  margin: 20px auto;
+  font-weight: 400;
+  background-color: #0e0e0eb8;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #ff0000;
+  text-align: center;
+  max-width: 60%;
+  flex: 1 1 calc(50% - 20px);
+  box-sizing: border-box;
+  transition: all 1s ease;
+}
+
+.calTokenInfo h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 10px #ff0000;
+  margin-bottom: 15px;
+}
+
+.calTokenInfo p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+.news-list {
+  text-align: left;
+  margin: auto 5px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #ff0000;
+  outline: none;
+  transition: 1s ease-in-out;
+  text-decoration: none;
+  margin: auto;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background: #ff00008c;
+}
+
+.btn svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  font-size: 18px;
+  font-weight: 100;
+  z-index: 1;
+  text-align: center;
+}
+
+.calTokenInfo ul {
+  width: 90%;
+  max-width: 550px;
+  margin: auto;
+  text-align: left;
+}
+
+/* Modal Styles */
+.homeModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; 
+}
+
+.homeModal-content {
+  position: relative;
+  max-width: 90%; 
+  max-height: 90%; 
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.homeModal-content img {
+  width: 100%;
+  height: auto; 
+  max-height: 90vh; 
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.homeClose-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1; /* Ensures the button stays circular */
+  padding: 0; /* Ensure no additional padding is added */
+}
+
+.homeClose-button:hover {
+  background: #ff0000;
+  color: #000000;
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .intro-text {
+    font-size: 1rem;
+    padding: 15px;
+    width: 95%;
+  }
+
+  .calTokenInfo {
+    flex: 1 1 calc(100% - 20px);
+    max-width: 100%;
+  }
+
+  .artImages img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+
+  .calTokenInfo {
+    font-size: 0.9rem !important;
+  }
+  .calTokenInfo h3 {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .artImages img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .calTokenInfo, .calTokenInfo p  {
+    font-size: 0.9rem !important;
+  }
+  .calTokenInfo h3 {
+    font-size: 1.2rem !important;
+  }
+}
+
+
+
+
+.calVideoWrapper {
+  display: flex;
+  justify-content: center; /* Centers the video horizontally */
+  align-items: center; /* Centers the video vertically */
+}
+
+.calVideo {
+  width: 400px; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Adds shadow for better appearance */
+}
+
+
+
+
+
+
+
+.calapes-container {
+  max-width: 95%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #0e0e0eb8;
+  backdrop-filter: blur(10px);
+  border: 2px solid #ff0000;
+  line-height: 1.6;
+}
+
+.heading {
+  color: #ff9617;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.8rem;
+}
+
+.subheading-wrapper {
+  display: flex;
+  justify-content: space-between; /* Space between containers */
+  gap: 20px; /* Adds spacing between the containers */
+  margin-top: 30px;
+}
+
+.subheading-container {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center elements */
+  width: 40%; /* Adjust width to fit two containers side by side */
+}
+
+.subheading-img {
+  max-width: 100px;
+  margin-bottom: 10px; /* Space between image and text */
+}
+
+.subheading {
+  font-size: 1.5rem;
+  color: #ff9617;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #ff9617;
+}
+
+.italic-text {
+  margin-top: 20px;
+  font-style: italic;
+  text-align: center; /* Center-align the italic text */
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .subheading-wrapper {
+    flex-direction: column; /* Stack the subheading containers vertically */
+    align-items: center; /* Center the items */
+  }
+
+  .subheading-container {
+    width: 90%; /* Make containers wider to fit the screen */
+    margin-bottom: 20px; /* Add spacing between containers */
+  }
+
+  .subheading-img {
+    max-width: 80px; /* Reduce image size on small screens */
+  }
+
+  .heading {
+    font-size: 1.6rem; /* Slightly smaller heading on mobile */
+  }
+
+  .subheading {
+    font-size: 1.3rem; /* Slightly smaller subheading font size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 1.4rem; /* Even smaller heading on very small screens */
+  }
+
+  .subheading {
+    font-size: 1.2rem; /* Further reduce subheading font size */
+  }
+
+  .subheading-img {
+    max-width: 60px; /* Make the image smaller on very small screens */
+  }
+
+  .italic-text {
+    font-size: 0.9rem; /* Reduce the font size of italic text */
+  }
+}

@@ -72,37 +72,37 @@ function NFTs() {
             className="CalApeImg"
             src={apesmoke}
             alt="CalApe"
-            onClick={() => setSelectedNFT("NFT 1")}
+            onClick={() => setSelectedNFT("1")}
           />
           <img
             className="CalApeImg"
             src={apefire}
             alt="CalApe"
-            onClick={() => setSelectedNFT("NFT 2")}
+            onClick={() => setSelectedNFT("2")}
           />
           <img
             className="CalApeImg"
             src={apeaxe}
             alt="CalApe"
-            onClick={() => setSelectedNFT("NFT 3")}
+            onClick={() => setSelectedNFT("3")}
           />
           <img
             className="CalApeImg"
             src={nft4}
             alt="CalApe"
-            onClick={() => setSelectedNFT("NFT 4")}
+            onClick={() => setSelectedNFT("4")}
           />
           <img
             className="CalApeImg"
             src={nft5}
             alt="CalApe"
-            onClick={() => setSelectedNFT("NFT 5")}
+            onClick={() => setSelectedNFT("5")}
           />
           <img
             className="CalApeImg"
             src={nft6}
             alt="CalApe"
-            onClick={() => setSelectedNFT("NFT 6")}
+            onClick={() => setSelectedNFT("6")}
           />
         </div>
 
@@ -116,12 +116,12 @@ function NFTs() {
               required
             >
               <option value="">Choose an NFT</option>
-              <option value="NFT 1">1</option>
-              <option value="NFT 2">2</option>
-              <option value="NFT 3">3</option>
-              <option value="NFT 4">4</option>
-              <option value="NFT 5">5</option>
-              <option value="NFT 6">6</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
             </select>
           </label>
           <br />

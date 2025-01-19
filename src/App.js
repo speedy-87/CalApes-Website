@@ -15,7 +15,7 @@ import Roadmap from "./pages/Roadmap"
 import Loader from "./components/Loader";  
 import "./App.css";
 import { Buffer } from "buffer";
-import Presale from "./pages/BuyPreSale";
+import Buycalapes from "./pages/Buy";
 
 if (typeof window !== "undefined" && !window.Buffer) {
   window.Buffer = Buffer;
@@ -94,7 +94,7 @@ function App() {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/nfts" element={<NFTs />} />
               <Route path="/about" element={<About />} />
-              <Route path="/presale" element={<Presale />} />
+              <Route path="/Buycalapes" element={<Buycalapes />} />
 
               <Route path="*" element={<Landing />} />
             </Routes>

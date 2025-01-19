@@ -47,7 +47,7 @@ function Navbar({ walletAddress, connectWallet, disconnectWallet }) {
         <li><Link to="/gallery" className="nav-link" onClick={closeMenu}>Gallery</Link></li>
         <li><Link to="/nfts" className="nav-link" onClick={closeMenu}>NFTs</Link></li>
         <li><Link to="/about" className="nav-link" onClick={closeMenu}>About Us</Link></li>
-        <li><Link to="/presale" className="nav-link" onClick={closeMenu}>BUY $CALAPES</Link></li>
+        <li><Link to="/Buycalapes" className="nav-link" onClick={closeMenu}>BUY $CALAPES</Link></li>
         
 
         <li className="wallet-menu">

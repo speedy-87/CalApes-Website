@@ -44,6 +44,7 @@ form {
   align-items: center;
   background-color: #0e0e0eb8;
   backdrop-filter: blur(10px);
+  border: 2px solid #ff0000;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -133,6 +134,7 @@ p {
   max-width: 600px;
   background-color: #0e0e0eb8;
   backdrop-filter: blur(10px);
+  border: 2px solid #ff0000;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);

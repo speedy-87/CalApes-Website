@@ -10,14 +10,15 @@
     max-width: 800px; /* Max width for the container */
     background-color: #0e0e0eb8;
     backdrop-filter: blur(10px);
+    border: 2px solid #ff0000;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
   }
   
   .calapesMarketing h2 {
-    color: #ff0000; 
-    text-shadow: 0 0 10px #6d6d6d00;
+    color: #ffffff; 
+    text-shadow: 0 0 10px #ff9617;
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.8rem;
@@ -41,18 +42,18 @@
   }
   
   .transaction-item a {
-    color: #ff9617; /* Soft pink color for the link */
+    color: #ff0000; /* Soft pink color for the link */
     text-decoration: none; /* Remove underline from the link */
     transition: color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
   }
   
   .transaction-item a:hover {
-    color: #df8210; /* A brighter pink color on hover */
+    color: #f62323; /* A brighter color on hover */
     transform: scale(1.05); /* Slightly enlarge the link on hover */
   }
   
   .transaction-item a:focus {
-    outline: 2px solid #ff9617; /* Add a focus outline in the same color as the link */
+    outline: 2px solid #ff0000; /* Add a focus outline in the same color as the link */
     outline-offset: 2px;
   }
   
@@ -63,7 +64,7 @@
   }
   
   .transaction-item strong {
-    color: #ff0000; /* Pink color for labels */
+    color: #ff9617; /* color for labels */
   }
   
   .error {

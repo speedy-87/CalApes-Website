@@ -45,8 +45,8 @@
   }
   
   /* Text Styles */
-  h2 {
-    font-size: 3rem;
+  .cal-apesPartners h2, .cal-apesAbout h2 {
+    font-size: 2.5rem;
     color: #ffffff;
     text-shadow: 2px 4px 8px #ff9617;
     line-height: 1.3;
